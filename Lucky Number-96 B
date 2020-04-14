@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+#define lli long long int
+using namespace std;
+ 
+int main() {
+lli n,i;
+    cin>>n;
+    string t;
+    for(i=0;;i++){
+        t+="47";
+        sort(t.begin(),t.end());
+        do{
+            if(stoll(t)>=n){
+                cout<<t<<endl;
+                return 0;
+            }
+        }while(next_permutation(t.begin(),t.end())); //nextpermutation inbuilt function
+    }
+	return 0;
+}
