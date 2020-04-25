@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+	int t;cin>>t;
+	while (t--){
+		int num;
+cin>>num;
+
+        vector <ll> vc1(num), vc2;
+
+        for(ll i = 0; i < num; i++){
+            cin>>vc1[i];
+        }
+
+        sort(vc1.begin(), vc1.end());
+
+        ll ans = vc1[0] * vc1[num - 1];
+
+        for(ll i = 2; i * i <= ans; i++){
+            if(ans % i == 0){
+                vc2.push_back(i);
+                if(i != ans / i){
+                    vc2.push_back(ans / i);
+                }
+            }
+        }
+
+        sort(vc2.begin(), vc2.end());
+
+        if(vc1 == vc2){
+            cout << ans << endl;
+        }
+        else{
+            cout << "-1" << endl;
+        }
+    }
+
+    return 0;
+}
